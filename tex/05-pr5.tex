@@ -1,0 +1,53 @@
+\section{Příklad 5}
+\patyZadani{H}
+
+\begin{enumerate}
+
+    \item Vytvoříme rovnice podle II. Kirchhoffového zakona a vyjadříme proud:\newline
+    $U_R + U_C - U = 0$\newline
+    $R * I + U_C -U = 0$\newline
+    $I = \frac{U - U_C}{R}$\newline
+    \item Sestavíme si rovnici pro $U_{C}^{'}$ a vytvoříme diferenciální rovnici:\newline
+    $U_{C}^{'} = \frac{1}{C} * I$\newline
+    $U_{C}^{'} = \frac{U - U_C}{R * C} = \frac{8V - U_C}{50\Omega * 40F}$\newline
+    $U_{C}^{'} + U_C * \frac{1}{2000} = \frac{1}{250}$\newline
+    \item Vypočítáme $\lambda$ z charakteristické rovnice:\newline
+    $\lambda + \frac{1}{R * C} = 0$\newline
+    $\lambda + \frac{1}{2000} = 0$\newline
+    $\lambda = - \frac{1}{2000}$\newline
+    \item Tvar rovnice:\newline
+    $U_C(t) = k(t)e^{\lambda * t}$\newline
+    $U_C(t) = k(t)e^{-\frac{t}{2000}}$\newline
+    \item Dosadíme do obecné rovnice a zderivujeme:\newline
+    $U_{C}^{'}(t) = k^{'}(t)e^{-\frac{t}{2000}} + k(t)(-\frac{1}{2000})e^{-\frac{t}{2000}}$\newline
+    \item Dosadíme do rovnice, kterou jsme si definovali:\newline
+    $U_{C}^{'} + U_C * \frac{1}{2000} = \frac{1}{250}$\newline
+    $k^{'}(t)e^{-\frac{t}{2000}} + k(t)(-\frac{1}{2000})e^{-\frac{t}{2000}} + k(t)(\frac{1}{2000})e^{-\frac{t}{2000}} = \frac{1}{250}$\newline
+    $k^{'}(t)e^{-\frac{t}{2000}} = \frac{1}{250}$\newline
+    \item Zbavíme se derivace a vyjádříme k(t):\newline
+    $k^{'}(t) = \frac{1}{250} e^{\frac{t}{2000}}$\newline
+    $\int k^{'}(t) = \int \frac{1}{250} e^{\frac{t}{2000}}dt$\newline
+    $ k(t) = \frac{1}{250} \int e^{\frac{t}{2000}}dt $\newline
+    $ k(t) = \frac{1}{250} * \frac{1}{\frac{1}{2000}} e^{\frac{t}{2000}} + K$\newline
+    $ k(t) = 8e^{\frac{t}{2000}} + K$\newline
+    \item Dosadíme k(t) do očekáváné rovnice:\newline
+    $U_C(t) = (8e^{\frac{t}{2000}} + K) * e^{-\frac{t}{2000}}$\newline
+    $U_C(t) = 8 + Ke^{-\frac{t}{2000}}$\newline
+    \item Vypočítame K podle podmínky ${U_C(t) = 4V}, t = 0$:\newline
+    $U_C(0) = 8 + Ke^0$\newline
+    $4 = 8 + K$\newline
+    $K = -4$\newline
+    \item Kontrola:\newline
+    $U_{C}^{'} + U_C * \frac{1}{2000} = \frac{1}{250}$\newline
+    $U_C(t) = 8 - 4e^{-\frac{t}{2000}}$\newline
+    $U_{C}^{'} + \frac{1}{125} - \frac{4e^{-\frac{t}{2000}}}{2000} = \frac{1}{125}$\newline
+    $U_{C}^{'} = \frac{4e^{-\frac{t}{2000}}}{2000}$\newline
+    \item Dosadíme do diferenciální rovnice a vypočítáme s hodnotami K = -4  a t = 0:\newline
+    $U_{C}^{'} + U_C * \frac{1}{2000} = \frac{8}{2000}$\newline
+    $\frac{4e^{-\frac{t}{2000}}}{2000} + \frac{8 - 4e^{-\frac{t}{2000}}}{2000} = \frac{1}{250}$\newline
+    $\frac{4e^0}{2000} + \frac{8 - 4e^0}{2000} = \frac{1}{250}$\newline
+    $\frac{8}{2000} = \frac{1}{250}$\newline
+    $0 = 0$
+    
+    
+\end{enumerate}
